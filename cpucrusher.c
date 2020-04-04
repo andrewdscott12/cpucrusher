@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 		printf( "usage: %s <numthreads> <loop iterations>\n", argv[0] );
 		exit(0);
 	}
-	/* create some variables and populate them with the arguements */
+	/* create some variables and populate them with the arguments */
 	
 	threadNum = atoi(argv[1]);
 	struct th th[threadNum];
