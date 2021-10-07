@@ -41,7 +41,7 @@ void * myloop(void *id)
 int main(int argc, char *argv[])
 {
 	srand(time(NULL));
-	int status = NULL;
+	int status = 0;
 	int threadNum;
 	int i = 0; //index for our thread launching loop
 
