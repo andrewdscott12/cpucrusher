@@ -32,5 +32,5 @@ make
 %{_bindir}/%{name}
 
 %changelog
-* Tue Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
+* Tue Jan 27 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
 - Initial package release_bin
