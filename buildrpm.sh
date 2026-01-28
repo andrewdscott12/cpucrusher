@@ -48,7 +48,12 @@ fi
 # Create tarball in SOURCES directory
 mkdir -p ~/rpmbuild/SOURCES
 cd "${TEMP_DIR}"
-tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} cpucrusher-${VERSION}/
+tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
+    --exclude='*.o' \
+    --exclude='cpucrusher' \
+    --exclude='cpucrusher-dbgsym' \
+    --exclude='.git' \
+    cpucrusher-${VERSION}/
 
 echo "Source tarball created: ~/rpmbuild/SOURCES/${TARBALL_NAME}"
 echo ""
