@@ -25,6 +25,7 @@ make
 
 %install
 %make_install DESTDIR=%{buildroot} INSTALL_DIR=/opt/freeware/bin
+strip %{buildroot}/opt/freeware/bin/%{name}
 
 %files
 /opt/freeware/bin/%{name}
