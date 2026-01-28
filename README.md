@@ -27,6 +27,14 @@ sudo dpkg -i ../cpucrusher_1.0-1_amd64.deb
 ./buildrpm.sh
 sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/cpucrusher-1.0-1.fc*.x86_64.rpm
 ```
+### Building under IBM AIX 7.x
+This package will work on IBM AIX if the IBM Open Source Toolbox is installed, using GCC. The AIX rpmbuild is older, so macros need to be set. Before building, create a ~/.rpmmacros file with these content:
+```bash
+%_topdir %(echo $HOME)/rpmbuild
+%_builddir %{_topdir}/BUILD
+%_rpmdir %{_topdir}/RPMS
+%_srcrpmdir %{_topdir}/SRPMS
+%_sourcedir %{_topdir}/SOURCES
 
 ## Usage
 ```bash
