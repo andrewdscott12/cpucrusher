@@ -51,7 +51,6 @@ cd "${TEMP_DIR}"
 tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
     --exclude='*.o' \
     --exclude='cpucrusher' \
-    --exclude='cpucrusher-dbgsym' \
     --exclude='.git' \
     cpucrusher-${VERSION}/
 
