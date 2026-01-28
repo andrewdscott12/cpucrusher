@@ -42,7 +42,7 @@ cp "${PROJECT_DIR}/${SPEC_FILE}" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 cp "${PROJECT_DIR}/README.md" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 
 echo Copy debian directory if it exists
-if [ -d "${PROJECT_DIR}/debian" ]; then
+if [ "$OS_TYPE" = "Linux" ] && [ -d "${PROJECT_DIR}/debian" ]; then
     cp -r "${PROJECT_DIR}/debian" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 fi
 
