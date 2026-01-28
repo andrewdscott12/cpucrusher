@@ -8,7 +8,8 @@ $(PROGRAM): cpucrusher.c
 
 install: $(PROGRAM)
 	mkdir -p $(DESTDIR)$(INSTALL_DIR)
-	install -m 0755 $(PROGRAM) $(DESTDIR)$(INSTALL_DIR)/$(PROGRAM)
+	cp $(PROGRAM) $(DESTDIR)$(INSTALL_DIR)/$(PROGRAM)
+	chmod 0755 $(DESTDIR)$(INSTALL_DIR)/$(PROGRAM)
 
 uninstall:
 	rm -f $(INSTALL_DIR)/$(PROGRAM)
