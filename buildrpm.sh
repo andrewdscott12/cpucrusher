@@ -16,7 +16,7 @@ if [ "$OS_TYPE" = "AIX" ]; then
     echo IBM AIX Detected
     SPEC_FILE="cpucrusher.aix.spec"
     OS_NAME="AIX"
-elseif [ "$OS_TYPE" = "Linux" ]; then
+elif [ "$OS_TYPE" = "Linux" ]; then
     echo Linux Detected
     SPEC_FILE="cpucrusher.spec"
     OS_NAME="Linux"
