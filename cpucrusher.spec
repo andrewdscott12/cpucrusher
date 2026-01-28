@@ -30,7 +30,7 @@ make
 
 %files
 %{_bindir}/%{name}
-Tue
+
 %changelog
-* Mon Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
+* Tue Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
 - Initial package release
