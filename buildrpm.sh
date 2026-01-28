@@ -28,7 +28,7 @@ cp -r "${PROJECT_DIR}/debian" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 # Create tarball in SOURCES directory
 mkdir -p ~/rpmbuild/SOURCES
 cd "${TEMP_DIR}"
-tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME}
+tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} cpucrusher-${VERSION}/
 
 echo "Source tarball created: ~/rpmbuild/SOURCES/${TARBALL_NAME}"
 echo ""
