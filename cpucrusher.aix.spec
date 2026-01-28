@@ -1,6 +1,6 @@
 Name:           cpucrusher
 Version:        1.0
-Release:        1%{?dist}
+Release:        1
 Summary:        A POSIX threaded utility for exercising CPU dispatch targets
 
 License:        GPL-2.0-or-later
@@ -8,12 +8,8 @@ URL:            https://github.com/yourusername/cpucrusher
 Source0:        cpucrusher-%{version}.tar.gz
 
 BuildRequires:  gcc
-BuildRequires:  glibc-devel
 
-Requires:       glibc
-Requires:       libgomp
-
-%global debug_package %{nil}
+Requires:       libc
 
 %description
 cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.
@@ -26,11 +22,10 @@ It spawns multiple threads and performs mathematical operations to stress the CP
 make
 
 %install
-%make_install DESTDIR=%{buildroot} INSTALL_DIR=%{bin_dir}
+%make_install DESTDIR=%{buildroot} INSTALL_DIR=/opt/freeware/bin
 
 %files
-%{_bindir}/%{name}
+/opt/freeware/bin/%{name}
 
 %changelog
-* Tue Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
-- Initial package release_bin
+- Initial package release

@@ -22,8 +22,10 @@ cp "${PROJECT_DIR}/Makefile" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 cp "${PROJECT_DIR}/cpucrusher.spec" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 cp "${PROJECT_DIR}/README.md" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 
-# Copy debian directory
-cp -r "${PROJECT_DIR}/debian" "${TEMP_DIR}/cpucrusher-${VERSION}/"
+# Copy debian directory if it exists
+if [ -d "${PROJECT_DIR}/debian" ]; then
+    cp -r "${PROJECT_DIR}/debian" "${TEMP_DIR}/cpucrusher-${VERSION}/"
+fi
 
 # Create tarball in SOURCES directory
 mkdir -p ~/rpmbuild/SOURCES
