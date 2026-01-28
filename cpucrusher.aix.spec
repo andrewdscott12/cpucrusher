@@ -11,6 +11,7 @@ BuildRequires:  gcc
 
 Requires:       libc
 
+%global debug_package %{nil}
 %define __debug_install_post %{nil}
 
 %description
