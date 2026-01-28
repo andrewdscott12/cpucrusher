@@ -1,5 +1,3 @@
-.PHONY: all clean install uninstall
-
 PROGRAM = cpucrusher
 INSTALL_DIR ?= /usr/local/bin
 
