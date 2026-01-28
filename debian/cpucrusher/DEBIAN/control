@@ -1,0 +1,12 @@
+Package: cpucrusher
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Andrew Scott <andrew@andrewdscott.com>
+Installed-Size: 23
+Depends: libc6 (>= 2.34)
+Section: utils
+Priority: optional
+Homepage: https://github.com/andrewdscott12/cpucrusher
+Description: POSIX threaded CPU exercise utility
+ cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.
+ It spawns multiple threads and performs mathematical operations to stress the CPU.

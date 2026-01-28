@@ -1,0 +1,13 @@
+Package: cpucrusher-dbgsym
+Package-Type: ddeb
+Source: cpucrusher
+Version: 1.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Andrew Scott <andrew@andrewdscott.com>
+Installed-Size: 15
+Depends: cpucrusher (= 1.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for cpucrusher
+Build-Ids: afdb9cf0554f96cfae7b29f2e46ca8fd590519f4

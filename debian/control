@@ -1,0 +1,14 @@
+Source: cpucrusher
+Section: utils
+Priority: optional
+Maintainer: Andrew Scott <andrew@andrewdscott.com>
+Build-Depends: debhelper-compat (= 13), gcc, libc6-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/andrewdscott12/cpucrusher
+
+Package: cpucrusher
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: POSIX threaded CPU exercise utility
+ cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.
+ It spawns multiple threads and performs mathematical operations to stress the CPU.
