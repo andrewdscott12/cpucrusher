@@ -13,11 +13,16 @@ TARBALL_NAME="cpucrusher-${VERSION}.tar.gz"
 # Detect OS and select appropriate spec file
 OS_TYPE=$(uname -s)
 if [ "$OS_TYPE" = "AIX" ]; then
+    echo IBM AIX Detected
     SPEC_FILE="cpucrusher.aix.spec"
     OS_NAME="AIX"
-else
+elseif [ "$OS_TYPE" = "Linux" ]; then
+    echo Linux Detected
     SPEC_FILE="cpucrusher.spec"
     OS_NAME="Linux"
+else
+    echo "Unsupported OS: $OS_TYPE"
+    exit 1
 fi
 
 trap "rm -rf ${TEMP_DIR}" EXIT
