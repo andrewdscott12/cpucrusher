@@ -1,5 +1,5 @@
 PROGRAM = cpucrusher
-INSTALL_DIR ?= /usr/local/bin
+INSTALL_DIR = /usr/local/bin
 
 all: $(PROGRAM)
 
