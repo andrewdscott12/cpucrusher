@@ -56,8 +56,8 @@ rm -f cpucrusher-${VERSION}/cpucrusher
 rm -f cpucrusher-${VERSION}/cpucrusher-dbgsym
 rm -rf cpucrusher-${VERSION}/.git
 
-# Create tarball - both GNU and BSD tar work with simple syntax
-tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} cpucrusher-${VERSION}/
+echo Create tarball - portable across GNU and BSD tar
+tar cf - cpucrusher-${VERSION}/ | gzip > ~/rpmbuild/SOURCES/${TARBALL_NAME}
 
 echo "Source tarball created: ~/rpmbuild/SOURCES/${TARBALL_NAME}"
 echo ""
