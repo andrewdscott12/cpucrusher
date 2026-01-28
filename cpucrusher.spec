@@ -26,7 +26,7 @@ It spawns multiple threads and performs mathematical operations to stress the CP
 make
 
 %install
-%make_install DESTDIR=%{buildroot} INSTALL_DIR=%{bin_dir}
+%make_install DESTDIR=%{buildroot} INSTALL_DIR=%{_bindir}
 
 %files
 %{_bindir}/%{name}
