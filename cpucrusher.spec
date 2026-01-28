@@ -15,6 +15,13 @@ Requires:       libgomp
 
 %global debug_package %{nil}
 
+# Detect OS and set binary path
+%if 0%{?aix}
+%global bin_dir /opt/freeware/bin
+%else
+%global bin_dir /usr/bin
+%endif
+
 %description
 cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.
 It spawns multiple threads and performs mathematical operations to stress the CPU.
@@ -26,10 +33,10 @@ It spawns multiple threads and performs mathematical operations to stress the CP
 make
 
 %install
-%make_install DESTDIR=%{buildroot} INSTALL_DIR=%{_bindir}
+%make_install DESTDIR=%{buildroot} INSTALL_DIR=%{bin_dir}
 
 %files
-%{_bindir}/%{name}
+%{bin_dir}/%{name}
 
 %changelog
 * Tue Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
