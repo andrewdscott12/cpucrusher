@@ -11,7 +11,7 @@ BuildRequires:  gcc
 
 Requires:       libc
 
-%define debug_package %{nil}
+%define __debug_install_post %{nil}
 
 %description
 cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.

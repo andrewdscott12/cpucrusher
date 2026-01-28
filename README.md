@@ -35,6 +35,7 @@ This package will work on IBM AIX if the IBM Open Source Toolbox is installed, u
 %_rpmdir %{_topdir}/RPMS
 %_srcrpmdir %{_topdir}/SRPMS
 %_sourcedir %{_topdir}/SOURCES
+%__debug_install_post %{nil}
 
 ## Usage
 ```bash
