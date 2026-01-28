@@ -13,6 +13,8 @@ BuildRequires:  glibc-devel
 Requires:       glibc
 Requires:       libgomp
 
+%global debug_package %{nil}
+
 %description
 cpucrusher is a simple POSIX threaded utility for exercising CPU dispatch targets.
 It spawns multiple threads and performs mathematical operations to stress the CPU.
@@ -28,7 +30,7 @@ make
 
 %files
 %{_bindir}/%{name}
-
+Tue
 %changelog
 * Mon Jan 28 2026 Andrew Scott <andrew@andrewdscott.com> - 1.0-1
 - Initial package release
