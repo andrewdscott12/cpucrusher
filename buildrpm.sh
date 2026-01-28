@@ -51,7 +51,7 @@ mkdir -p ~/rpmbuild/SOURCES
 cd "${TEMP_DIR}"
 
 # Remove compiled files and other artifacts before tarring
-find cpucrusher-${VERSION} -name '*.o' -delete
+find cpucrusher-${VERSION} -name '*.o' -exec rm {} \;
 rm -f cpucrusher-${VERSION}/cpucrusher
 rm -f cpucrusher-${VERSION}/cpucrusher-dbgsym
 rm -rf cpucrusher-${VERSION}/.git
