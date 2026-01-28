@@ -41,12 +41,12 @@ cp "${PROJECT_DIR}/Makefile" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 cp "${PROJECT_DIR}/${SPEC_FILE}" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 cp "${PROJECT_DIR}/README.md" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 
-echo Copy debian directory if it exists
+# Copy debian directory if it exists
 if [ "$OS_TYPE" = "Linux" ] && [ -d "${PROJECT_DIR}/debian" ]; then
     cp -r "${PROJECT_DIR}/debian" "${TEMP_DIR}/cpucrusher-${VERSION}/"
 fi
 
-echo Create tarball in SOURCES directory
+# Create tarball in SOURCES directory
 mkdir -p ~/rpmbuild/SOURCES
 cd "${TEMP_DIR}"
 
@@ -56,14 +56,14 @@ rm -f cpucrusher-${VERSION}/cpucrusher
 rm -f cpucrusher-${VERSION}/cpucrusher-dbgsym
 rm -rf cpucrusher-${VERSION}/.git
 
-echo Create tarball - portable across GNU and BSD tar
+# Create tarball - portable across GNU and BSD tar
 tar cf - cpucrusher-${VERSION}/ | gzip > ~/rpmbuild/SOURCES/${TARBALL_NAME}
 
 echo "Source tarball created: ~/rpmbuild/SOURCES/${TARBALL_NAME}"
 echo ""
 echo "Building RPM package..."
 
-echo Run rpmbuild with the appropriate spec file
+# Run rpmbuild with the appropriate spec file
 rpmbuild -ba "${PROJECT_DIR}/${SPEC_FILE}"
 
 echo ""
