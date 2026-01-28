@@ -52,14 +52,14 @@ cd "${TEMP_DIR}"
 
 # Use appropriate tar syntax for the OS
 if [ "$OS_TYPE" = "AIX" ]; then
-    # BSD tar on AIX - use -s for exclusion patterns
+    echo BSD tar on AIX - use -s for exclusion patterns
     tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
         -s '|^cpucrusher-${VERSION}/cpucrusher$||' \
         -s '|^cpucrusher-${VERSION}/.*\.o$||' \
         -s '|^cpucrusher-${VERSION}/\.git/||' \
         cpucrusher-${VERSION}/
 else
-    # GNU tar on Linux - use --exclude
+    echo GNU tar on Linux - use --exclude
     tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
         --exclude='*.o' \
         --exclude='cpucrusher' \
