@@ -49,11 +49,23 @@ fi
 echo Create tarball in SOURCES directory
 mkdir -p ~/rpmbuild/SOURCES
 cd "${TEMP_DIR}"
-tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
-    --exclude='*.o' \
-    --exclude='cpucrusher' \
-    --exclude='.git' \
-    cpucrusher-${VERSION}/
+
+# Use appropriate tar syntax for the OS
+if [ "$OS_TYPE" = "AIX" ]; then
+    # BSD tar on AIX - use -s for exclusion patterns
+    tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
+        -s '|^cpucrusher-${VERSION}/cpucrusher$||' \
+        -s '|^cpucrusher-${VERSION}/.*\.o$||' \
+        -s '|^cpucrusher-${VERSION}/\.git/||' \
+        cpucrusher-${VERSION}/
+else
+    # GNU tar on Linux - use --exclude
+    tar czf ~/rpmbuild/SOURCES/${TARBALL_NAME} \
+        --exclude='*.o' \
+        --exclude='cpucrusher' \
+        --exclude='.git' \
+        cpucrusher-${VERSION}/
+fi
 
 echo "Source tarball created: ~/rpmbuild/SOURCES/${TARBALL_NAME}"
 echo ""
